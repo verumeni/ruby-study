@@ -1,0 +1,16 @@
+services:
+  ruby:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ruby-study
+    working_dir: /app
+    volumes:
+      - ./:/app
+      - bundle_data:/usr/local/bundle
+    tty: true
+    stdin_open: true
+    command: bash
+
+volumes:
+  bundle_data:
