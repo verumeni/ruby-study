@@ -1,8 +1,8 @@
 require_relative "task"
 require_relative "task_repository"
 
+# module ユーティリティクラスのようなもの
 module TaskCLI
-    module_function
 
     def run
         repo = TaskRepository.new
@@ -66,4 +66,7 @@ module TaskCLI
         task.complete!
         puts "完了にしました"
     end
+
+    # モジュール内メソッドを外部に提供するための宣言
+    module_function :run, :show, :add, :complete
 end
