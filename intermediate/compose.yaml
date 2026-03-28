@@ -1,0 +1,18 @@
+services:
+  ruby:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ruby-intermediate
+    working_dir: /app
+    volumes:
+      - ./:/app
+      - bundle_data:/usr/local/bundle
+    environment:
+      TZ: Asia/Tokyo
+    tty: true
+    stdin_open: true
+    command: bash
+
+volumes:
+  bundle_data:
