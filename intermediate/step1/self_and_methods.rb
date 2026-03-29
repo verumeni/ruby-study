@@ -60,3 +60,22 @@ u1.describe_self
 puts "count = #{User.count}"
 puts "u1.name = #{u1.name}"
 puts "u2.name = #{u2.name}"
+
+# classネスト
+class Parent
+
+    def self.call
+        "parent!"
+    end
+
+    class Child
+        def self.call
+            "child!"
+        end
+    end
+end
+
+# class methodを参照する際は.を使用
+puts Parent.call
+# class内のclassを参照する際は::を使用(主に定数・名前空間参照の時に使用)
+puts Parent::Child.call
